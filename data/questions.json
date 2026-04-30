@@ -1,0 +1,154 @@
+{
+  "questions": [
+    {
+      "id": "twk-1",
+      "category": "twk",
+      "text": "Ideologi negara Indonesia adalah…",
+      "options": [
+        { "key": "A", "text": "Liberalisme" },
+        { "key": "B", "text": "Pancasila" },
+        { "key": "C", "text": "Komunisme" },
+        { "key": "D", "text": "Sosialisme" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "twk-2",
+      "category": "twk",
+      "text": "Semboyan negara Indonesia adalah…",
+      "options": [
+        { "key": "A", "text": "Merdeka atau Mati" },
+        { "key": "B", "text": "Bhinneka Tunggal Ika" },
+        { "key": "C", "text": "Dharma Jaya" },
+        { "key": "D", "text": "Garuda Pancasila" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "twk-3",
+      "category": "twk",
+      "text": "UUD 1945 diamandemen untuk…",
+      "options": [
+        { "key": "A", "text": "Menghapus demokrasi" },
+        { "key": "B", "text": "Memperkuat kedaulatan rakyat" },
+        { "key": "C", "text": "Menghapus DPR" },
+        { "key": "D", "text": "Mengganti Pancasila" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "twk-4",
+      "category": "twk",
+      "text": "Lembaga tertinggi negara menurut UUD 1945 adalah…",
+      "options": [
+        { "key": "A", "text": "Presiden" },
+        { "key": "B", "text": "MPR" },
+        { "key": "C", "text": "MA" },
+        { "key": "D", "text": "BPK" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tiu-1",
+      "category": "tiu",
+      "text": "Jika 3x + 5 = 20, maka x = …",
+      "options": [
+        { "key": "A", "text": "3" },
+        { "key": "B", "text": "4" },
+        { "key": "C", "text": "5" },
+        { "key": "D", "text": "6" }
+      ],
+      "correctKey": "C"
+    },
+    {
+      "id": "tiu-2",
+      "category": "tiu",
+      "text": "Deret 2, 4, 8, 16, … suku berikutnya adalah…",
+      "options": [
+        { "key": "A", "text": "24" },
+        { "key": "B", "text": "28" },
+        { "key": "C", "text": "30" },
+        { "key": "D", "text": "32" }
+      ],
+      "correctKey": "D"
+    },
+    {
+      "id": "tiu-3",
+      "category": "tiu",
+      "text": "Seperempat dari 48 adalah…",
+      "options": [
+        { "key": "A", "text": "10" },
+        { "key": "B", "text": "12" },
+        { "key": "C", "text": "14" },
+        { "key": "D", "text": "16" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tiu-4",
+      "category": "tiu",
+      "text": "Antonim kata 'mundur' yang tepat adalah…",
+      "options": [
+        { "key": "A", "text": "Berhenti" },
+        { "key": "B", "text": "Maju" },
+        { "key": "C", "text": "Lambat" },
+        { "key": "D", "text": "Putar" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tkp-1",
+      "category": "tkp",
+      "text": "Rekan kerja sering terlambat. Sikap Anda…",
+      "options": [
+        { "key": "A", "text": "Menegur keras di depan umum" },
+        { "key": "B", "text": "Mengabaikan sepenuhnya" },
+        {
+          "key": "C",
+          "text": "Menyampaikan dengan sopan secara pribadi"
+        },
+        { "key": "D", "text": "Melapor ke atasan tanpa konfirmasi" }
+      ],
+      "correctKey": "C"
+    },
+    {
+      "id": "tkp-2",
+      "category": "tkp",
+      "text": "Atasan memberi target berat. Anda akan…",
+      "options": [
+        { "key": "A", "text": "Menolak mentah-mentah" },
+        {
+          "key": "B",
+          "text": "Mencari solusi dan koordinasi kebutuhan"
+        },
+        { "key": "C", "text": "Menunda tanpa komunikasi" },
+        { "key": "D", "text": "Menyalahkan tim lain" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tkp-3",
+      "category": "tkp",
+      "text": "Ada kesalahan data yang Anda temukan. Langkah…",
+      "options": [
+        { "key": "A", "text": "Diam karena bukan tugas Anda" },
+        { "key": "B", "text": "Memperbaiki diam-diam tanpa catatan" },
+        { "key": "C", "text": "Melaporkan dan usulkan perbaikan" },
+        { "key": "D", "text": "Menyebarkan ke grup chat besar" }
+      ],
+      "correctKey": "C"
+    },
+    {
+      "id": "tkp-4",
+      "category": "tkp",
+      "text": "Konflik antar divisi. Peran Anda…",
+      "options": [
+        { "key": "A", "text": "Memihak divisi sendiri saja" },
+        { "key": "B", "text": "Menjembatani komunikasi objektif" },
+        { "key": "C", "text": "Menghindari pertemuan" },
+        { "key": "D", "text": "Memperlebar isu ke media" }
+      ],
+      "correctKey": "B"
+    }
+  ]
+}
