@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { startTransition, useEffect, useState } from "react";
 import HasilScored from "@/components/HasilScored";
+import HistoryList from "@/components/HistoryList";
 import { RESULT_STORAGE_KEY } from "@/components/quiz/resultKey";
 
 type Stored = {
@@ -10,6 +11,16 @@ type Stored = {
   total: number;
   score: number;
   category?: string;
+};
+
+type Attempt = {
+  id: string;
+  category: string;
+  variant: number;
+  score: number;
+  correct: number;
+  total: number;
+  createdAt: string;
 };
 
 function readStored(): Stored | null {
@@ -31,11 +42,19 @@ const emptyBtn =
 
 export default function HasilClient() {
   const [data, setData] = useState<Stored | null | undefined>(undefined);
+  const [attempts, setAttempts] = useState<Attempt[]>([]);
 
   useEffect(() => {
     startTransition(() => {
       setData(readStored());
     });
+    const run = async () => {
+      const res = await fetch("/api/history");
+      if (!res.ok) return;
+      const body = (await res.json()) as { attempts?: Attempt[] };
+      setAttempts(body.attempts ?? []);
+    };
+    void run();
   }, []);
 
   if (data === undefined) {
@@ -58,11 +77,21 @@ export default function HasilClient() {
   }
 
   return (
-    <HasilScored
-      category={(data.category ?? "-").toUpperCase()}
-      score={data.score}
-      correct={data.correct}
-      total={data.total}
-    />
+    <div className="space-y-6">
+      <HasilScored
+        category={(data.category ?? "-").toUpperCase()}
+        score={data.score}
+        correct={data.correct}
+        total={data.total}
+      />
+      <section className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <h2 className="text-sm font-bold uppercase tracking-wide text-slate-700">
+          History pengerjaan
+        </h2>
+        <div className="mt-3">
+          <HistoryList attempts={attempts} />
+        </div>
+      </section>
+    </div>
   );
 }

@@ -49,6 +49,78 @@
       "correctKey": "B"
     },
     {
+      "id": "twk-5",
+      "category": "twk",
+      "text": "Dasar hukum pembentukan peraturan di Indonesia diatur dalam…",
+      "options": [
+        { "key": "A", "text": "UUD 1945 Pasal 1" },
+        { "key": "B", "text": "UU Pembentukan Peraturan Perundang-undangan" },
+        { "key": "C", "text": "KUHP" },
+        { "key": "D", "text": "Perpres APBN" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "twk-6",
+      "category": "twk",
+      "text": "Sila ke-3 Pancasila berbunyi…",
+      "options": [
+        { "key": "A", "text": "Keadilan sosial bagi seluruh rakyat Indonesia" },
+        { "key": "B", "text": "Kerakyatan yang dipimpin hikmat kebijaksanaan" },
+        { "key": "C", "text": "Persatuan Indonesia" },
+        { "key": "D", "text": "Ketuhanan Yang Maha Esa" }
+      ],
+      "correctKey": "C"
+    },
+    {
+      "id": "twk-7",
+      "category": "twk",
+      "text": "Lambang negara Indonesia adalah…",
+      "options": [
+        { "key": "A", "text": "Bendera Merah Putih" },
+        { "key": "B", "text": "Garuda Pancasila" },
+        { "key": "C", "text": "Indonesia Raya" },
+        { "key": "D", "text": "Burung Cenderawasih" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "twk-8",
+      "category": "twk",
+      "text": "Kekuasaan membuat undang-undang berada pada…",
+      "options": [
+        { "key": "A", "text": "DPR bersama Presiden" },
+        { "key": "B", "text": "MPR" },
+        { "key": "C", "text": "MA" },
+        { "key": "D", "text": "MK" }
+      ],
+      "correctKey": "A"
+    },
+    {
+      "id": "twk-9",
+      "category": "twk",
+      "text": "Bentuk negara Indonesia adalah…",
+      "options": [
+        { "key": "A", "text": "Federasi" },
+        { "key": "B", "text": "Serikat" },
+        { "key": "C", "text": "Kesatuan" },
+        { "key": "D", "text": "Monarki" }
+      ],
+      "correctKey": "C"
+    },
+    {
+      "id": "twk-10",
+      "category": "twk",
+      "text": "Pemilu di Indonesia berasas langsung, umum, bebas, rahasia, serta…",
+      "options": [
+        { "key": "A", "text": "Objektif dan modern" },
+        { "key": "B", "text": "Jujur dan adil" },
+        { "key": "C", "text": "Cepat dan tepat" },
+        { "key": "D", "text": "Bersih dan efisien" }
+      ],
+      "correctKey": "B"
+    },
+    {
       "id": "tiu-1",
       "category": "tiu",
       "text": "Jika 3x + 5 = 20, maka x = …",
@@ -93,6 +165,78 @@
         { "key": "B", "text": "Maju" },
         { "key": "C", "text": "Lambat" },
         { "key": "D", "text": "Putar" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tiu-5",
+      "category": "tiu",
+      "text": "Jika 25% dari nilai y adalah 40, maka y = …",
+      "options": [
+        { "key": "A", "text": "120" },
+        { "key": "B", "text": "140" },
+        { "key": "C", "text": "160" },
+        { "key": "D", "text": "180" }
+      ],
+      "correctKey": "C"
+    },
+    {
+      "id": "tiu-6",
+      "category": "tiu",
+      "text": "Rasio 3 : 5 setara dengan…",
+      "options": [
+        { "key": "A", "text": "9 : 15" },
+        { "key": "B", "text": "12 : 25" },
+        { "key": "C", "text": "6 : 8" },
+        { "key": "D", "text": "15 : 9" }
+      ],
+      "correctKey": "A"
+    },
+    {
+      "id": "tiu-7",
+      "category": "tiu",
+      "text": "Bilangan ganjil di antara 30 sampai 36 adalah…",
+      "options": [
+        { "key": "A", "text": "30, 32, 34" },
+        { "key": "B", "text": "31, 33, 35" },
+        { "key": "C", "text": "30, 33, 36" },
+        { "key": "D", "text": "32, 34, 36" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tiu-8",
+      "category": "tiu",
+      "text": "Sinonim kata 'akurat' adalah…",
+      "options": [
+        { "key": "A", "text": "Tepat" },
+        { "key": "B", "text": "Lambat" },
+        { "key": "C", "text": "Samar" },
+        { "key": "D", "text": "Ragu" }
+      ],
+      "correctKey": "A"
+    },
+    {
+      "id": "tiu-9",
+      "category": "tiu",
+      "text": "Jika a = 7 dan b = 4, maka a² - b² = …",
+      "options": [
+        { "key": "A", "text": "21" },
+        { "key": "B", "text": "27" },
+        { "key": "C", "text": "33" },
+        { "key": "D", "text": "45" }
+      ],
+      "correctKey": "C"
+    },
+    {
+      "id": "tiu-10",
+      "category": "tiu",
+      "text": "Deret huruf A, C, E, G, … huruf berikutnya adalah…",
+      "options": [
+        { "key": "A", "text": "H" },
+        { "key": "B", "text": "I" },
+        { "key": "C", "text": "J" },
+        { "key": "D", "text": "K" }
       ],
       "correctKey": "B"
     },
@@ -147,6 +291,78 @@
         { "key": "B", "text": "Menjembatani komunikasi objektif" },
         { "key": "C", "text": "Menghindari pertemuan" },
         { "key": "D", "text": "Memperlebar isu ke media" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tkp-5",
+      "category": "tkp",
+      "text": "Anda diminta lembur mendadak saat tim lain kesulitan. Sikap Anda…",
+      "options": [
+        { "key": "A", "text": "Menolak karena bukan tugas divisi" },
+        { "key": "B", "text": "Membantu sesuai kapasitas dan koordinasi" },
+        { "key": "C", "text": "Diam agar tidak dilibatkan" },
+        { "key": "D", "text": "Meminta imbalan dulu" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tkp-6",
+      "category": "tkp",
+      "text": "Warga marah di loket layanan. Tindakan pertama Anda…",
+      "options": [
+        { "key": "A", "text": "Membalas dengan nada tinggi" },
+        { "key": "B", "text": "Mendengar keluhan dengan tenang" },
+        { "key": "C", "text": "Menyuruh keluar ruangan" },
+        { "key": "D", "text": "Mengabaikan sampai reda" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tkp-7",
+      "category": "tkp",
+      "text": "Teman tim melakukan kekeliruan dan panik. Anda…",
+      "options": [
+        { "key": "A", "text": "Menyalahkannya di grup" },
+        { "key": "B", "text": "Membantu cari solusi dan evaluasi" },
+        { "key": "C", "text": "Membiarkan agar belajar sendiri" },
+        { "key": "D", "text": "Langsung lapor tanpa bicara" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tkp-8",
+      "category": "tkp",
+      "text": "Anda menerima tugas prioritas dengan waktu sempit. Anda…",
+      "options": [
+        { "key": "A", "text": "Menunggu instruksi detail terus-menerus" },
+        { "key": "B", "text": "Menyusun langkah, urutan, dan target waktu" },
+        { "key": "C", "text": "Mengerjakan seadanya" },
+        { "key": "D", "text": "Menunda hingga ada pengingat" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tkp-9",
+      "category": "tkp",
+      "text": "Saat rapat, ide Anda ditolak. Sikap paling tepat…",
+      "options": [
+        { "key": "A", "text": "Tersinggung dan diam total" },
+        { "key": "B", "text": "Minta alasan dan perbaiki usulan" },
+        { "key": "C", "text": "Memaksa ide diterima" },
+        { "key": "D", "text": "Menyindir rekan di luar rapat" }
+      ],
+      "correctKey": "B"
+    },
+    {
+      "id": "tkp-10",
+      "category": "tkp",
+      "text": "Anda melihat potensi benturan kepentingan di proses kerja. Anda…",
+      "options": [
+        { "key": "A", "text": "Membiarkan karena bukan urusan" },
+        { "key": "B", "text": "Lapor sesuai prosedur dan bukti" },
+        { "key": "C", "text": "Menyebar isu di media sosial" },
+        { "key": "D", "text": "Memberi tahu teman dekat saja" }
       ],
       "correctKey": "B"
     }

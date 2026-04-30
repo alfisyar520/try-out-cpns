@@ -19,4 +19,8 @@ export type PublicQuestion = Omit<Question, "correctKey">;
 
 export type SubmitAnswer = { questionId: string; chosen: OptionKey };
 
-export type SubmitPayload = { answers: SubmitAnswer[] };
+export type SubmitPayload = {
+  answers: SubmitAnswer[];
+  category?: string;
+  variant?: number;
+};

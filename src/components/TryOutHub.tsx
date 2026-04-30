@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import CategoryCards from "@/components/CategoryCards";
 import LimitSelect from "@/components/LimitSelect";
@@ -38,6 +39,25 @@ export default function TryOutHub() {
           Pilih subtansi ujian
         </h2>
         <CategoryCards limit={limit} />
+      </section>
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="text-sm font-bold uppercase tracking-wide text-slate-800">
+          Mode paket
+        </h2>
+        <p className="mt-1 text-sm text-slate-600">
+          Kerjakan paket gabungan TWK, TIU, dan TKP.
+        </p>
+        <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
+          {[1, 2, 3, 4, 5].map((variant) => (
+            <Link
+              key={variant}
+              href={`/tes?category=paket&variant=${variant}`}
+              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-slate-900 px-3 text-sm font-bold text-lime-300 transition hover:bg-slate-800"
+            >
+              Paket {variant}
+            </Link>
+          ))}
+        </div>
       </section>
     </div>
   );

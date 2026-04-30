@@ -8,7 +8,7 @@ import { useQuestionDeck } from "@/components/quiz/useQuestionDeck";
 
 export function useTesSession() {
   const router = useRouter();
-  const { busy, msg, rows, category } = useQuestionDeck();
+  const { busy, msg, rows, category, variant } = useQuestionDeck();
   const [step, setStep] = useState(0);
   const [pick, setPick] = useState<Record<string, OptionKey>>({});
   const [sendErr, setSendErr] = useState<string | null>(null);
@@ -29,13 +29,13 @@ export function useTesSession() {
   const finish = useCallback(async () => {
     if (!allChosen) return;
     setSendErr(null);
-    const ok = await postSubmit(rows, pick, category);
+    const ok = await postSubmit(rows, pick, category, variant);
     if (!ok) {
       setSendErr("Pengiriman jawaban gagal.");
       return;
     }
     router.push("/hasil");
-  }, [allChosen, category, pick, router, rows]);
+  }, [allChosen, category, pick, router, rows, variant]);
 
   const errorText = msg ?? sendErr;
 
