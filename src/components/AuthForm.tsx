@@ -33,7 +33,7 @@ export default function AuthForm() {
       setBusy(false);
       return;
     }
-    router.push("/try-out");
+    router.push("/");
     router.refresh();
   }
 

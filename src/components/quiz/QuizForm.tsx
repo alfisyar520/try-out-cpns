@@ -2,7 +2,7 @@
 
 import QuizNav from "@/components/quiz/QuizNav";
 import QuizOptionRow from "@/components/quiz/QuizOptionRow";
-import QuizProgress from "@/components/quiz/QuizProgress";
+import QuestionPalette from "@/components/quiz/QuestionPalette";
 import { useTesSession } from "@/components/quiz/useTesSession";
 
 const muted = "text-center text-slate-600";
@@ -38,8 +38,7 @@ export default function QuizForm() {
   if (!row) return <p className={muted}>Bank soal kosong untuk filter ini.</p>;
 
   return (
-    <div className="space-y-6">
-      <QuizProgress step={step} total={rows.length} />
+    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_19rem] lg:items-start">
       <article className={panel}>
         <h2 className="text-lg font-semibold leading-relaxed text-slate-900 sm:text-xl">
           {row.text}
@@ -63,6 +62,15 @@ export default function QuizForm() {
           onFinish={finish}
         />
       </article>
+      <aside className="lg:sticky lg:top-20 lg:self-start">
+        <QuestionPalette
+          total={rows.length}
+          step={step}
+          answeredMap={pick}
+          questionIds={rows.map((item) => item.id)}
+          onJump={setStep}
+        />
+      </aside>
     </div>
   );
 }
