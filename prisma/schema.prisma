@@ -13,8 +13,25 @@ model User {
   email        String   @unique
   passwordHash String   @map("password_hash")
   createdAt    DateTime @default(now()) @map("created_at")
+  attempts     Attempt[]
 
   @@map("users")
+}
+
+model Attempt {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  category  String
+  variant   Int      @default(1)
+  score     Int
+  correct   Int
+  total     Int
+  details   Json
+  createdAt DateTime @default(now()) @map("created_at")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@map("attempts")
 }
 
 model Question {

@@ -40,5 +40,5 @@ export function useQuestionDeck() {
     return () => ac.abort();
   }, [missingCategory, category, limit, variant]);
 
-  return { busy, msg, rows, category };
+  return { busy, msg, rows, category, variant };
 }
