@@ -1,15 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
-import type { QuestionCategory } from "@/lib/types";
+import type { SessionCategory } from "@/data/get-questions";
 import { pickQuestions } from "@/data/get-questions";
 import { requireApiUser } from "@/lib/auth-api";
 import { toPublicQuestion } from "@/lib/to-public";
 
-const ALLOWED: QuestionCategory[] = ["twk", "tiu", "tkp"];
+const ALLOWED: SessionCategory[] = ["twk", "tiu", "tkp", "paket"];
 
-function parseCategory(value: string | null): QuestionCategory | null {
+function parseCategory(value: string | null): SessionCategory | null {
   if (!value) return null;
-  return ALLOWED.includes(value as QuestionCategory)
-    ? (value as QuestionCategory)
+  return ALLOWED.includes(value as SessionCategory)
+    ? (value as SessionCategory)
     : null;
 }
 
@@ -25,7 +25,12 @@ export async function GET(request: NextRequest) {
   const safeLimit = Number.isFinite(limit)
     ? Math.min(50, Math.max(1, limit))
     : 10;
-  const picked = await pickQuestions(category, safeLimit);
+  const variantRaw = request.nextUrl.searchParams.get("variant");
+  const variant = variantRaw ? Number.parseInt(variantRaw, 10) : 1;
+  const safeVariant = Number.isFinite(variant)
+    ? Math.min(5, Math.max(1, variant))
+    : 1;
+  const picked = await pickQuestions(category, safeLimit, safeVariant);
   const questions = picked.map(toPublicQuestion);
-  return NextResponse.json({ category, questions });
+  return NextResponse.json({ category, variant: safeVariant, questions });
 }

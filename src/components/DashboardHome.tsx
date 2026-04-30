@@ -56,6 +56,25 @@ export default function DashboardHome() {
           ))}
         </ul>
       </section>
+      <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <h2 className="text-sm font-bold uppercase tracking-wide text-slate-700">
+          Paket penuh
+        </h2>
+        <p className="mt-1 text-sm text-slate-600">
+          Pilih salah satu dari 5 paket gabungan.
+        </p>
+        <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5">
+          {[1, 2, 3, 4, 5].map((variant) => (
+            <Link
+              key={variant}
+              href={`/tes?category=paket&variant=${variant}`}
+              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-slate-900 px-3 text-sm font-bold text-lime-300 transition hover:bg-slate-800"
+            >
+              Paket {variant}
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

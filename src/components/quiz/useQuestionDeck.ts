@@ -8,6 +8,7 @@ export function useQuestionDeck() {
   const params = useSearchParams();
   const category = params.get("category") ?? "";
   const limit = params.get("limit") ?? "8";
+  const variant = params.get("variant") ?? "1";
   const missingCategory = !category;
 
   const [busy, setBusy] = useState(() => !missingCategory);
@@ -23,7 +24,7 @@ export function useQuestionDeck() {
       setBusy(true);
       setMsg(null);
       try {
-        const qs = new URLSearchParams({ category, limit });
+        const qs = new URLSearchParams({ category, limit, variant });
         const res = await fetch(`/api/questions?${qs}`, { signal: ac.signal });
         if (!res.ok) throw new Error("fail");
         const body = (await res.json()) as { questions?: PublicQuestion[] };
@@ -37,7 +38,7 @@ export function useQuestionDeck() {
     };
     void run();
     return () => ac.abort();
-  }, [missingCategory, category, limit]);
+  }, [missingCategory, category, limit, variant]);
 
   return { busy, msg, rows, category };
 }
