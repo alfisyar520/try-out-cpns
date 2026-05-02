@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import CategoryCards from "@/components/CategoryCards";
 import LimitSelect from "@/components/LimitSelect";
+import { PACKAGE_VARIANT_IDS } from "@/lib/quiz/package-targets";
+import { examPaketLinkClass } from "@/lib/ui/exam-link-styles";
 
 export default function TryOutHub() {
   const [limit, setLimit] = useState(8);
@@ -48,11 +50,11 @@ export default function TryOutHub() {
           Kerjakan paket gabungan TWK, TIU, dan TKP.
         </p>
         <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-5">
-          {[1, 2, 3, 4, 5].map((variant) => (
+          {PACKAGE_VARIANT_IDS.map((variant) => (
             <Link
               key={variant}
               href={`/tes?category=paket&variant=${variant}`}
-              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-slate-900 px-3 text-sm font-bold text-lime-300 transition hover:bg-slate-800"
+              className={examPaketLinkClass}
             >
               Paket {variant}
             </Link>
