@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { CATEGORY_LIST } from "@/lib/category-meta";
+import { PACKAGE_VARIANT_IDS } from "@/lib/quiz/package-targets";
+import { examPaketLinkClass } from "@/lib/ui/exam-link-styles";
 
 const quickLimit = 8;
 
@@ -64,11 +66,11 @@ export default function DashboardHome() {
           Pilih salah satu dari 5 paket gabungan.
         </p>
         <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-5">
-          {[1, 2, 3, 4, 5].map((variant) => (
+          {PACKAGE_VARIANT_IDS.map((variant) => (
             <Link
               key={variant}
               href={`/tes?category=paket&variant=${variant}`}
-              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-slate-900 px-3 text-sm font-bold text-lime-300 transition hover:bg-slate-800"
+              className={examPaketLinkClass}
             >
               Paket {variant}
             </Link>

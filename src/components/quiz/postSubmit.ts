@@ -1,4 +1,4 @@
-import { RESULT_STORAGE_KEY } from "@/components/quiz/resultKey";
+import { RESULT_STORAGE_KEY } from "@/lib/hasil/result-storage-key";
 
 type Row = { id: string };
 

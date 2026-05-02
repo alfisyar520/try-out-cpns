@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import type { SessionCategory } from "@/data/get-questions";
 import { pickQuestions } from "@/data/get-questions";
 import { requireApiUser } from "@/lib/auth-api";
+import { parseExamVariant, parseQuestionLimit } from "@/lib/api/exam-params";
 import { toPublicQuestion } from "@/lib/to-public";
 
 const ALLOWED: SessionCategory[] = ["twk", "tiu", "tkp", "paket"];
@@ -20,16 +21,12 @@ export async function GET(request: NextRequest) {
   if (!category) {
     return NextResponse.json({ error: "Kategori tidak valid." }, { status: 400 });
   }
-  const limitRaw = request.nextUrl.searchParams.get("limit");
-  const limit = limitRaw ? Number.parseInt(limitRaw, 10) : 10;
-  const safeLimit = Number.isFinite(limit)
-    ? Math.min(50, Math.max(1, limit))
-    : 10;
-  const variantRaw = request.nextUrl.searchParams.get("variant");
-  const variant = variantRaw ? Number.parseInt(variantRaw, 10) : 1;
-  const safeVariant = Number.isFinite(variant)
-    ? Math.min(5, Math.max(1, variant))
-    : 1;
+  const safeLimit = parseQuestionLimit(
+    request.nextUrl.searchParams.get("limit"),
+  );
+  const safeVariant = parseExamVariant(
+    request.nextUrl.searchParams.get("variant"),
+  );
   const picked = await pickQuestions(category, safeLimit, safeVariant);
   const questions = picked.map(toPublicQuestion);
   return NextResponse.json({ category, variant: safeVariant, questions });

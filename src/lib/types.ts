@@ -24,3 +24,13 @@ export type SubmitPayload = {
   category?: string;
   variant?: number;
 };
+
+export type AttemptSummary = {
+  id: string;
+  category: string;
+  variant: number;
+  score: number;
+  correct: number;
+  total: number;
+  createdAt: string;
+};

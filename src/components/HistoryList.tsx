@@ -1,16 +1,8 @@
 "use client";
 
-type Attempt = {
-  id: string;
-  category: string;
-  variant: number;
-  score: number;
-  correct: number;
-  total: number;
-  createdAt: string;
-};
+import type { AttemptSummary } from "@/lib/types";
 
-type Props = { attempts: Attempt[] };
+type Props = { attempts: AttemptSummary[] };
 
 function formatDate(value: string) {
   return new Date(value).toLocaleString("id-ID", {
@@ -21,7 +13,9 @@ function formatDate(value: string) {
 
 export default function HistoryList({ attempts }: Props) {
   if (!attempts.length) {
-    return <p className="text-sm text-slate-500">Belum ada history pengerjaan.</p>;
+    return (
+      <p className="text-sm text-slate-500">Belum ada history pengerjaan.</p>
+    );
   }
   return (
     <div className="overflow-x-auto rounded-xl border border-slate-200">
