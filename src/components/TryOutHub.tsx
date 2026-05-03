@@ -60,6 +60,13 @@ export default function TryOutHub() {
             </Link>
           ))}
         </div>
+        <p className="mt-4 text-sm text-slate-600">
+          Lihat{" "}
+          <Link className="font-semibold text-lime-800 underline" href="/peringkat">
+            peringkat paket gabungan
+          </Link>
+          .
+        </p>
       </section>
     </div>
   );

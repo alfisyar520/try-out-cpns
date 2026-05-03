@@ -31,15 +31,17 @@ model Attempt {
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId, createdAt])
+  @@index([category, variant])
   @@map("attempts")
 }
 
 model Question {
-  id          String @id
-  category    String
-  text        String
-  options     Json
-  correctKey  String @map("correct_key")
+  id           String  @id
+  category     String
+  text         String
+  options      Json
+  correctKey   String  @map("correct_key")
+  explanation  String?
 
   @@index([category])
   @@map("questions")

@@ -1,5 +1,7 @@
 "use client";
 
+import { Fragment } from "react";
+import AttemptPembahasan from "@/components/AttemptPembahasan";
 import type { AttemptSummary } from "@/lib/types";
 
 type Props = { attempts: AttemptSummary[] };
@@ -9,6 +11,11 @@ function formatDate(value: string) {
     dateStyle: "medium",
     timeStyle: "short",
   });
+}
+
+function variantLabel(category: string, variant: number) {
+  if (category.toLowerCase() === "paket") return `Paket ${variant}`;
+  return "—";
 }
 
 export default function HistoryList({ attempts }: Props) {
@@ -31,15 +38,24 @@ export default function HistoryList({ attempts }: Props) {
         </thead>
         <tbody>
           {attempts.map((attempt) => (
-            <tr key={attempt.id} className="border-t border-slate-200">
-              <td className="px-3 py-2">{formatDate(attempt.createdAt)}</td>
-              <td className="px-3 py-2 uppercase">{attempt.category}</td>
-              <td className="px-3 py-2">Paket {attempt.variant}</td>
-              <td className="px-3 py-2 font-semibold">{attempt.score}</td>
-              <td className="px-3 py-2">
-                {attempt.correct}/{attempt.total}
-              </td>
-            </tr>
+            <Fragment key={attempt.id}>
+              <tr className="border-t border-slate-200">
+                <td className="px-3 py-2">{formatDate(attempt.createdAt)}</td>
+                <td className="px-3 py-2 uppercase">{attempt.category}</td>
+                <td className="px-3 py-2">
+                  {variantLabel(attempt.category, attempt.variant)}
+                </td>
+                <td className="px-3 py-2 font-semibold">{attempt.score}</td>
+                <td className="px-3 py-2">
+                  {attempt.correct}/{attempt.total}
+                </td>
+              </tr>
+              <tr className="border-t border-slate-100 bg-slate-50/90">
+                <td colSpan={5} className="px-3 py-3">
+                  <AttemptPembahasan details={attempt.details} />
+                </td>
+              </tr>
+            </Fragment>
           ))}
         </tbody>
       </table>

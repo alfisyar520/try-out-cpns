@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { requireApiUser } from "@/lib/auth-api";
 import { prisma } from "@/lib/prisma";
+import { enrichAttemptsWithPembahasan } from "@/lib/history/enrich-attempt-details";
 
 export async function GET() {
   const user = await requireApiUser();
@@ -17,7 +18,9 @@ export async function GET() {
       correct: true,
       total: true,
       createdAt: true,
+      details: true,
     },
   });
-  return NextResponse.json({ attempts });
+  const withPembahasan = await enrichAttemptsWithPembahasan(attempts);
+  return NextResponse.json({ attempts: withPembahasan });
 }
