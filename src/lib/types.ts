@@ -48,3 +48,14 @@ export type AttemptSummary = {
   createdAt: string;
   details: AttemptHistoryDetail[];
 };
+
+export type PaketLeaderboardEntry = {
+  rank: number;
+  userId: string;
+  name: string;
+  score: number;
+  correct: number;
+  total: number;
+  createdAt: string;
+  isYou: boolean;
+};
