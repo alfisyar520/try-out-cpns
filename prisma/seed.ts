@@ -5,8 +5,12 @@ import { Prisma, PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 async function main() {
-  const filePath = path.join(__dirname, "..", "data", "questions.json");
+  const root = path.join(__dirname, "..");
+  const filePath = path.join(root, "data", "questions.json");
+  const explainPath = path.join(root, "data", "question-explanations.json");
   const raw = readFileSync(filePath, "utf-8");
+  const explainRaw = readFileSync(explainPath, "utf-8");
+  const explanations = JSON.parse(explainRaw) as Record<string, string>;
   const { questions } = JSON.parse(raw) as {
     questions: Array<{
       id: string;
@@ -16,7 +20,9 @@ async function main() {
       correctKey: string;
     }>;
   };
+
   for (const question of questions) {
+    const explanation = explanations[question.id] ?? null;
     await prisma.question.upsert({
       where: { id: question.id },
       create: {
@@ -25,12 +31,14 @@ async function main() {
         text: question.text,
         options: question.options as Prisma.InputJsonValue,
         correctKey: question.correctKey,
+        explanation,
       },
       update: {
         category: question.category,
         text: question.text,
         options: question.options as Prisma.InputJsonValue,
         correctKey: question.correctKey,
+        explanation,
       },
     });
   }

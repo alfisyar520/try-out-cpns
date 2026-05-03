@@ -35,11 +35,12 @@ model Attempt {
 }
 
 model Question {
-  id          String @id
-  category    String
-  text        String
-  options     Json
-  correctKey  String @map("correct_key")
+  id           String  @id
+  category     String
+  text         String
+  options      Json
+  correctKey   String  @map("correct_key")
+  explanation  String?
 
   @@index([category])
   @@map("questions")

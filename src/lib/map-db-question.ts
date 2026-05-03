@@ -6,6 +6,7 @@ type Row = {
   text: string;
   options: unknown;
   correctKey: string;
+  explanation?: string | null;
 };
 
 export function mapDbRowToQuestion(row: Row): Question {
@@ -15,5 +16,6 @@ export function mapDbRowToQuestion(row: Row): Question {
     text: row.text,
     options: row.options as Question["options"],
     correctKey: row.correctKey as Question["correctKey"],
+    explanation: row.explanation ?? null,
   };
 }
